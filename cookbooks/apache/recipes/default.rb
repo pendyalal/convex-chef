@@ -12,7 +12,7 @@ if node["platform"] == "ubuntu"
 	end
 end
 
-package "apache2" do
+package "Installapache" do
         package_name node["apache"]["package"]
 end
 
@@ -46,7 +46,8 @@ template "/var/www/#{sitename}/index.html" do
 	mode "0644"
 	variables(
                 :site_title => data["site_title"],
-		:comingsoon => "Coming Soon!"
+		:comingsoon => "Coming Soon!",
+		:author_name => node["author"]["name"]
         )
 end
 end
@@ -67,7 +68,7 @@ end
 
 service "httpd" do
         service_name node["apache"]["package"]
-        action [:enable, :start]
+        action [ :enable, :start ]
 end
 
-#include_recipe "php::default"
+include_recipe "php::default"

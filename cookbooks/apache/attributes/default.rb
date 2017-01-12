@@ -4,9 +4,11 @@ default["apache"]["sites"]["lpendyala3b"] = { "site_title" => "lpendyala3b websi
 
 default["apache"]["sites"]["lpendyala1"] = { "site_title" => "lpendyala1 website", "port" => 80, "domain" => "lpendyala1.mylabserver.com"}
 
+default["author"]["name"] = "lpendyala"
+
 case node["platform"]
 when "centos"
 	default["apache"]["package"] = "httpd"
 when "ubuntu"
-	default["ubuntu"]["package"] ="apache2"
+	default["apache"]["package"] = "apache2"
 end 
