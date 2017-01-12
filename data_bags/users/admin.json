@@ -1,4 +1,5 @@
 {
+
 	"id":"admin",
 	"comment":"admin user",
 	"uid":"2005",
@@ -6,4 +7,5 @@
 	"home":"/home/admin",
 	"shell":"/bin/bash",
 	"password":"123456"
+
 }
